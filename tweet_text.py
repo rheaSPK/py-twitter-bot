@@ -19,5 +19,5 @@ def idle_text():
     """Return text that is tweeted when not replying"""
     # Construct the text we want to tweet out (140 chars max)
     berlin_time = datetime.now(timezone('Europe/Berlin'))
-    text = berlin_time.strftime("It is %H:%M:%S on a %A (%d-%m-%Y).")
+    text = berlin_time.strftime("%H%M%S%d%m%Y\nHi @grobedetails. <3")
     return text

@@ -10,13 +10,16 @@ def reply(tweet):
     """Return text to be used as a reply"""
     message = tweet['text']
     user = tweet['user']['screen_name']
+    if message.startswith('@'):
+        message = "".join(message.split(' ')[1:])
+        
     if "hi" in message.lower():
         berlin_time = datetime.now(timezone('Europe/Berlin'))
         date = berlin_time.strftime("It is %H:%M:%S on a %A (%d-%m-%Y).")
         return "Hi @" + user + "! " + date
     i = 0;
     #while i== message.olen
-    
+
     if re.match(r"\w*(\+|-)?\d+\w*(\+|-|\*|/)\w*(\+|-)?\d+\w*", message):
         return str(eval(message))
     return None

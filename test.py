@@ -19,5 +19,10 @@ class TestTweetText(unittest.TestCase):
     def test_math1(self):
         response = reply({'text': '1+1', 'user': {'screen_name': 'TestUser'}})
         self.assertTrue("2" in response)
+
+        response = reply({'text': '@bot 1+1', 'user': {'screen_name': 'TestUser'}})
+        self.assertTrue("2" in response)
+
+        
 if __name__ == '__main__':
     unittest.main(verbosity=2)

@@ -16,6 +16,9 @@ def reply(tweet):
 
     if message == "Which Pokemon is #2":
         return "Ivysaur, ofc, it's the best!!!1!111!111"
+
+    if message == "@bot oh rly?":
+        return "YA RLY!"
     
     if message.startswith('@'):
         message = "".join(message.split(' ')[1:])

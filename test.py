@@ -29,6 +29,9 @@ class TestTweetText(unittest.TestCase):
         response = reply({'text': 'Which Pokemon is #2', 'user': {'screen_name': 'TestUser'}})
         self.assertTrue("Ivysaur" in response)
 
+        response = reply({'text': '@bot oh rly?', 'user': {'screen_name': 'TestUser'}})
+        self.assertTrue("YA RLY!" in response)
+
         
 if __name__ == '__main__':
     unittest.main(verbosity=2)

@@ -12,7 +12,10 @@ def reply(tweet):
     user = tweet['user']['screen_name']
 
     if message == "Which Pokemon is #1":
-        return "Bulbasaur, ofc, it's the best!!!1!111!111"  
+        return "Bulbasaur, ofc, it's the best!!!1!111!111"
+
+    if message == "Which Pokemon is #2":
+        return "Ivysaur, ofc, it's the best!!!1!111!111"
     
     if message.startswith('@'):
         message = "".join(message.split(' ')[1:])

@@ -4,6 +4,7 @@
 from datetime import datetime
 # convert times according to time zones
 from pytz import timezone
+import re
 
 def reply(tweet):
     """Return text to be used as a reply"""
@@ -13,6 +14,11 @@ def reply(tweet):
         berlin_time = datetime.now(timezone('Europe/Berlin'))
         date = berlin_time.strftime("It is %H:%M:%S on a %A (%d-%m-%Y).")
         return "Hi @" + user + "! " + date
+    i = 0;
+    #while i== message.olen
+    
+    if re.match(r"\w*(\+|-)?\d+\w*(\+|-|\*|/)\w*(\+|-)?\d+\w*", message):
+        return str(eval(message))
     return None
 
 def idle_text():
